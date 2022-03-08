@@ -1,7 +1,11 @@
 class NotesModel {
 
     getNotes() {
-        return [];
+    
+    }
+
+    addNote() {
+       
     }
 
 }

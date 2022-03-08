@@ -5,4 +5,11 @@ describe('NotesModel', () => {
         const model = new NotesModel();
         expect(model.getNotes()).toEqual([]);
     });
+
+    it('should return in the array the added notes', () => {
+        const model = new NotesModel();
+        model.addNote('Buy milk');
+        model.addNote('Go to the gym');
+        expect(model.getNotes()).toEqual(['Buy milk', 'Go to the gym']);
+    })
 });
