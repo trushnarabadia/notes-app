@@ -39,9 +39,13 @@
           this.buttonEl.addEventListener("click", () => {
             this.model.addNote(this.inputEl.value);
             this.displayNotes();
+            this.removeUserInput();
           });
         }
         displayNotes() {
+          document.querySelectorAll(".note").forEach((note) => {
+            note.remove();
+          });
           const notes = this.model.getNotes();
           notes.forEach((note) => {
             const noteEl = document.createElement("div");
@@ -49,6 +53,9 @@
             noteEl.innerText = note;
             this.mainContainerEl.append(noteEl);
           });
+        }
+        removeUserInput() {
+          this.inputEl.value = "";
         }
       };
       module.exports = NotesView2;
